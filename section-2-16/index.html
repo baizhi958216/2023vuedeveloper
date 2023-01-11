@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <p>{{ fullName }}</p>
+        <p><a :href="url" target="_blank">Bing</a></p>
+        <p v-html="raw_url"></p>
+        <p>{{ typeof age }}</p>
+
+        <hr />
+
+        <label>First Name</label>
+        <!-- 
+            trim: 去除首尾多余空格
+            lazy: 输入完成后执行
+        -->
+        <input type="text" v-model.trim="firstName">
+
+        <label>Last Name</label>
+        <!-- 
+            Syntax sugar 
+        -->
+        <input type="text" :value="lastName" @input.prevent="updateLastName('Last name event triggered!',$event)">
+
+        <label>Age</label>
+        <!-- 
+            若输入类型为text, v-model可进行nubmer转换
+        -->
+        <input type="number" v-model.number="age">
+
+        <button type="button" @click="increment">Increment</button>
+        <button type="button" v-on:click="age--">Decrement</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
