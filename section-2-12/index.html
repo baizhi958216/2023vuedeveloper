@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <p>{{ fullName() }}</p>
+        <p><a :href="url" target="_blank">Bing</a></p>
+        <p v-html="raw_url"></p>
+        <p>{{ age }}</p>
+
+        <hr />
+
+        <label>First Name</label>
+        <input type="text" v-model="firstName">
+
+        <label>Last Name</label>
+        <!-- 
+            Syntax sugar 
+        -->
+        <input type="text" :value="lastName" @input="updateLastName('Last name event triggered!',$event)">
+
+        <button type="button" @click="increment">Increment</button>
+        <button type="button" v-on:click="age--">Decrement</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
