@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!--     
+            1.Will remove or add the element depending on the condition
+            2.Cheap on Load because it`s lazy
+            (If the condition evaluates to false on the initial page load, 
+            the element will not be added to the page. 
+            The browser doesn`t have to waste time painting the element)
+            3.Expensice on Toggle
+            (If you have hundreds of elements, this is expensive)
+        -->
+        <p v-if="mode == 1">Showing v-if directive content</p>
+        <template v-else-if="mode == 2">
+            <p>Bonus content</p>
+            <h3>v-else-if</h3>
+        </template>
+        <p v-else>v-else</p>
+
+        <!-- 
+            1.Changes the display CSS property
+            if `false` display will be set to be none.
+            2.Dose not work with v-else directive
+            3.Dose not work with template tag
+            4.Expensive on Load
+            5.Cheap on Toggle
+        -->
+        <i v-show="mode == 1">v-show</i>
+        
+        <select v-model="mode">
+            <option value="1">v-if</option>
+            <option value="2">v-else-if</option>
+            <option value="3">v-else</option>
+        </select>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
