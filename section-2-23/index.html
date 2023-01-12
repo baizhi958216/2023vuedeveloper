@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <div id="app">
+        <button type="button" class="move" @click="move">
+            Move to Bottom
+        </button>
+        <!-- 
+            The key special attribute is primarily used as a hint for Vue's virtual DOM algorithm 
+            to identify vnodes when diffing the new list of nodes against the old list.
+            By default it uses an "in-place patch" strategy.(就地更新)
+            When Vue patches the DOM with the new item data, 
+            then any data local in the iterated component will not update along with it.
+        -->
+        <div class="card" v-for="person in people" :key="person.name">
+            <h3>{{ person.name }}</h3>
+            <p>{{ person.message }}</p>
+            <input type="text">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
