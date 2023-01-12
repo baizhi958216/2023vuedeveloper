@@ -1,0 +1,12 @@
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.red {
+    color: red;
+}
+
+[v-cloak] {
+    display: none;
+}
