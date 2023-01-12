@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <div id="app">
+        <label>
+            <input type="checkbox" v-model="isPurple"> Purple
+        </label>
+
+        <select v-model="selectedColor">
+            <option value="">White</option>
+            <option value="text-black">Black</option>
+            <option value="text-orange">Orange</option>
+        </select>
+
+        <!-- <div class="circle" :class="{ purple:isPurple }">
+            Hi!
+        </div> -->
+
+        <!-- Using computed -->
+        <div class="circle" :class="[selectedColor,circle_classes]">
+            Hi!
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
