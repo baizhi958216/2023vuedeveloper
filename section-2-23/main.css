@@ -1,0 +1,41 @@
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+    padding-top: 10px;
+    background: #e6ecf1;
+}
+
+#app {
+    text-align: center;
+}
+
+#app button {
+    background-color: #899ff4;
+    border-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#app .card {
+    width: 400px;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    display: block;
+    padding: 1.25rem;
+}
+
+#app input:focus {
+    outline: 0;
+}
+
+#app input {
+    font-weight: bold;
+    width: 90%;
+    font-size: 1em;
+    padding: 5px 10px;
+}
