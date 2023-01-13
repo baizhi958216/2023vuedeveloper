@@ -1,3 +1,5 @@
+// Typically, import css files are not support in Javascript
+// This access will be extract into a separate file during the bundle phase.
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
