@@ -1,4 +1,10 @@
 <template>
+    <!-- 
+        The changes will not be reflected in other components.
+        components is not being able to hold on to those changes.
+        parent component updates will override the changes in the child component
+    -->
+    <button type="button" @click="age++">Update Age</button>
     <p>The user is {{ age }} years old</p>
 </template>
 

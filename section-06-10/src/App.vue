@@ -1,6 +1,9 @@
 <template>
   <h3>Hey!</h3>
-  <greeting></greeting>
+
+  <button type="button" @click="age++">Update Age</button>
+
+  <greeting :age="age"></greeting>
   <user :age="age"></user>
 </template>
 
