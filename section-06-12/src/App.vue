@@ -1,6 +1,10 @@
 <template>
   <h3>Hey!</h3>
   <greeting :age="age"></greeting>
+  <!-- 
+    [Vue warn]: Missing required prop: "age"  
+    <user @age-change="updateAge"></user>
+  -->
   <user :age="age" @age-change="updateAge"></user>
 </template>
 

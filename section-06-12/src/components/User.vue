@@ -18,7 +18,26 @@ export default {
         
         However, it doesn't necessarily work in the reverse.
     */
-    props: ["age"],
+    props: {
+        age: {
+            type: Number,
+            // required: true
+            // default: 20
+            /* 
+                The condition will check if the value of the prop is less than 130
+            */
+            validator(value) {
+                /*
+                Before validator, the Vue instance hasn't been created,
+                won't have access to any proxy methods or properties.
+
+                this.onClickAge()
+                Uncaught TypeError: this is undefined
+                */
+                return value < 130
+            }
+        }
+    },
     /* 
         Vue want to know what events the parent component 
         can expect from the child component.
