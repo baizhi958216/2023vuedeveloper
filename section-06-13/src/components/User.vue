@@ -4,7 +4,15 @@
         components is not being able to hold on to those changes.
         parent component updates will override the changes in the child component
     -->
-    <button type="button" @click="onClickAge">Update Age</button>
+    <button type="button" @click="onClickAge">Update Age Event</button>
+    <!-- 
+        Event has payload record in Vue Devtool, provided the source, tells us that
+        the event was emitted from which component.
+
+        Callback function then nothing will get launched, not even in the console,
+        this makes things a bit harder to debug.
+    -->
+    <button type="button" @click="ageChangeFn(3)">Update Age CB</button>
     <p>The user is {{ age }} years old</p>
     <p>{{ ageDoubled }}</p>
 </template>
@@ -36,7 +44,8 @@ export default {
                 */
                 return value < 130
             }
-        }
+        },
+        ageChangeFn: Function
     },
     /* 
         Vue want to know what events the parent component 
