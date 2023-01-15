@@ -31,7 +31,15 @@
       Can't use transition component because it doesn't work with list items,
       the transition-group component is specifically for animating items and a loop.
     -->
-    <transition-group name="fade">
+    <!--  
+      Animate Library: https://animate.style/
+      If leave the class name properties empty, then vue throw an error.
+      Remove every property except for the enter-active class and leave-active class.
+    -->
+    <transition-group name="fade"
+      enter-active-class="animate__animated animate__fadeInLeft"
+      leave-active-class="animate__animated animate__fadeOutRight"
+    >
       <li v-for="(number, index) in numbers" :key="number" @click="removeItem(index)">
         {{ number }}
       </li>
@@ -80,6 +88,14 @@ export default {
 </script>
 
 <style>
+.animate__fadeOutRight {
+  position: absolute;
+}
+
+.animate__animated {
+  animation-duration: 1.5s;
+}
+
 li {
   font-size: 22px;
   cursor: pointer;
