@@ -11,7 +11,7 @@
   </transition> -->
 
   <!-- Also has @enter-cancelled @leave-cancelled -->
-  <transition 
+  <!-- <transition 
   @before-enter="beforEnter" 
   @enter="enter" 
   @after-enter="afterEnter" 
@@ -22,7 +22,21 @@
   name="fade"
   >
     <h2 v-if="flag">Hey</h2>
-  </transition>
+  </transition> -->
+
+  <button @click="addItem">Add</button>
+
+  <ul>
+    <!--  
+      Can't use transition component because it doesn't work with list items,
+      the transition-group component is specifically for animating items and a loop.
+    -->
+    <transition-group name="fade">
+      <li v-for="(number, index) in numbers" :key="number" @click="removeItem(index)">
+        {{ number }}
+      </li>
+    </transition-group>
+  </ul>
 </template>
 
 <script>
@@ -30,10 +44,19 @@ export default {
   name: 'App',
   data() {
     return {
-      flag: true
+      flag: true,
+      numbers: [1, 2, 3, 4, 5]
     }
   },
   methods: {
+    addItem() {
+      const num = Math.floor(Math.random() * 100 + 1)
+      const index = Math.floor(Math.random() * this.numbers.length)
+      this.numbers.splice(index, 0, num)
+    },
+    removeItem(index) {
+      this.numbers.splice(index, 1)
+    },
     beforEnter(el) {
       console.log('before-enter event fired', el);
     },
@@ -57,6 +80,11 @@ export default {
 </script>
 
 <style>
+li {
+  font-size: 22px;
+  cursor: pointer;
+}
+
 h2 {
   width: 400px;
   padding: 20px;
