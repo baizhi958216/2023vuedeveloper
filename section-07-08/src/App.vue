@@ -104,6 +104,22 @@ h2 {
   opacity: 0;
 }
 
+/* 
+  *-move class can animate the other items.
+*/
+.fade-move {
+  transition: all 1s linear;
+}
+
+/* 
+  By using absolute position, the item fading away will
+  give up its space, forcing the other elements to move up
+  after making this change.
+*/
+.fade-leave-active {
+  position: absolute;
+}
+
 .zoom-enter-active {
   animation: zoom-in 1s linear forwards;
   transition: all 2s linear;
