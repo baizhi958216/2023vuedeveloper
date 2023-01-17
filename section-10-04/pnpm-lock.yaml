@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rushstack/eslint-patch': ^1.1.4
+  '@vee-validate/rules': ^4.7.3
   '@vitejs/plugin-vue': ^4.0.0
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/test-utils': ^2.2.6
@@ -23,6 +24,7 @@ specifiers:
   vue-router: ^4.1.6
 
 dependencies:
+  '@vee-validate/rules': 4.7.3
   pinia: 2.0.28_vue@3.2.45
   vee-validate: 4.7.3_vue@3.2.45
   vue: 3.2.45
@@ -433,6 +435,10 @@ packages:
       '@types/node': 14.18.36
     dev: true
     optional: true
+
+  /@vee-validate/rules/4.7.3:
+    resolution: {integrity: sha512-lC/nYA1U7XiE/ncikyzKOqsTAa1OJGza1757zahqoPD0s/66vIR3uBBDeBUNeCOrBoq9Ga20wOVEuiBIGvOZww==}
+    dev: false
 
   /@vitejs/plugin-vue/4.0.0_vite@4.0.4+vue@3.2.45:
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
