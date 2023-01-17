@@ -10,6 +10,8 @@ import {
   max,
   alpha_spaces as alphaSpaces,
   email,
+  max_value as maxVal,
+  min_value as minVal,
 } from "@vee-validate/rules";
 
 export default {
@@ -23,5 +25,7 @@ export default {
     defineRule("max", max);
     defineRule("alphaSpaces", alphaSpaces);
     defineRule("email", email);
+    defineRule("minVal", minVal);
+    defineRule("maxVal", maxVal);
   },
 };
