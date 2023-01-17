@@ -13,6 +13,7 @@ import {
   max_value as maxVal,
   min_value as minVal,
   confirmed,
+  not_one_of as excluded,
 } from "@vee-validate/rules";
 
 export default {
@@ -29,5 +30,6 @@ export default {
     defineRule("minVal", minVal);
     defineRule("maxVal", maxVal);
     defineRule("confirmed", confirmed);
+    defineRule("excluded", excluded);
   },
 };
