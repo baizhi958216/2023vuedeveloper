@@ -99,7 +99,6 @@
                 name="name"
                 class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
                 placeholder="Enter Name"
-                :rules="'required'"
               />
               <ErrorMessage class="text-red-600" name="name" />
             </div>
@@ -180,7 +179,7 @@ export default {
     return {
       tab: "login",
       schema: {
-        name: "required",
+        name: "required|min:3|max:100|alphaSpaces",
         email: "",
         age: "",
         password: "",
