@@ -12,6 +12,7 @@ import {
   email,
   max_value as maxVal,
   min_value as minVal,
+  confirmed,
 } from "@vee-validate/rules";
 
 export default {
@@ -27,5 +28,6 @@ export default {
     defineRule("email", email);
     defineRule("minVal", minVal);
     defineRule("maxVal", maxVal);
+    defineRule("confirmed", confirmed);
   },
 };
