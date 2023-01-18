@@ -94,6 +94,7 @@
             v-show="tab === 'register'"
             :validation-schema="schema"
             @submit="register"
+            :initial-values="userData"
           >
             <!-- Name -->
             <div class="mb-3">
@@ -217,6 +218,9 @@ export default {
         confirm_password: "confirmed:@password",
         country: "required|excluded:Antarctica",
         tos: "required",
+      },
+      userData: {
+        country: "USA",
       },
     };
   },
