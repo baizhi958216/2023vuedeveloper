@@ -5,19 +5,25 @@ import App from "./App.vue";
 import router from "./router";
 
 import VeeValidatePlugin from "./includes/validation";
-import "./includes/firebase";
+import { getAuth } from "./includes/firebase";
 
 import "./assets/base.css";
 import "./assets/main.css";
 
-const app = createApp(App);
+let app;
 
-/*  
-    Pinia is registering a plugin with the Vue Developer tools,
-    Pinia package will add a new tool for interacting with the state.
-*/
-app.use(createPinia());
-app.use(router);
-app.use(VeeValidatePlugin);
+getAuth().onAuthStateChanged(() => {
+  if (!app) {
+    app = createApp(App);
 
-app.mount("#app");
+    /*  
+              Pinia is registering a plugin with the Vue Developer tools,
+              Pinia package will add a new tool for interacting with the state.
+          */
+    app.use(createPinia());
+    app.use(router);
+    app.use(VeeValidatePlugin);
+
+    app.mount("#app");
+  }
+});
