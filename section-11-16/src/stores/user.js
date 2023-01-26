@@ -6,6 +6,7 @@ import {
   doc,
   db,
   updateProfile,
+  signInWithEmailAndPassword,
 } from "@/includes/firebase";
 
 export default defineStore("user", {
@@ -31,6 +32,14 @@ export default defineStore("user", {
         displayName: values.name,
       });
 
+      this.userLoggedIn = true;
+    },
+    async authenticate(values) {
+      await signInWithEmailAndPassword(
+        getAuth(),
+        values.email,
+        values.password
+      );
       this.userLoggedIn = true;
     },
   },
