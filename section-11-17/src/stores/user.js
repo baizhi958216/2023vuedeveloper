@@ -42,5 +42,9 @@ export default defineStore("user", {
       );
       this.userLoggedIn = true;
     },
+    async signOut() {
+      await getAuth().signOut();
+      this.userLoggedIn = false;
+    },
   },
 });
