@@ -177,12 +177,18 @@
   </section>
 </template>
 <script>
+import useUserStore from "@/stores/user";
 export default {
   name: "manage",
   // after Route Guard
   beforeRouteEnter(to, from, next) {
-    console.log("beforeRouterEnter Gurad");
-    next();
+    const store = useUserStore();
+
+    if (store.userLoggedIn) {
+      next();
+    } else {
+      next({ name: "home" });
+    }
   },
 };
 </script>
