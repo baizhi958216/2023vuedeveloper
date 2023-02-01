@@ -39,4 +39,11 @@ const router = createRouter({
   linkExactActiveClass: "text-yellow-500",
 });
 
+router.beforeEach((to, from, next) => {
+  console.log("Global Guard");
+  console.log(to, from);
+  // The router will not render the component until called 'next()' function
+  next();
+});
+
 export default router;
