@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import { storage, ref, uploadBytes } from "@/includes/firebase";
 export default {
   name: "Upload",
   data() {
@@ -69,9 +70,12 @@ export default {
       const files = [...$event.dataTransfer.files];
 
       files.forEach((file) => {
-        if (file.type !== "audio/mpeg") {
-          return;
-        }
+        // const storageRef = storage.ref("songs"); //music-9a6d5.appspot.com/songs
+        // const songsRef = storageRef.child(`songs/${file.name}`); //music-9a6d5.appspot.com/songs/example.mp3
+        // songsRef.put(file);
+        const storageRef = ref(storage, "htmls");
+        const htmlRef = ref(storage, `htmls/${file.name}`);
+        uploadBytes(htmlRef, file);
       });
 
       console.log(files);
