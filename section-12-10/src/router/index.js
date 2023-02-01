@@ -16,9 +16,12 @@ const routes = [
   },
   {
     name: "manage",
+    // alias: "/manage",
     path: "/manage-music",
     component: Manage,
   },
+  // redirect is better for search engines to index
+  // the new URLS as fast as possible
   {
     path: "/manage",
     redirect: { name: "manage" },
