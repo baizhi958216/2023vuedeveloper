@@ -3,6 +3,8 @@ import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Manage from "@/views/Manage.vue";
 
+import useUserStore from "@/stores/user";
+
 const routes = [
   {
     name: "home",
@@ -22,6 +24,9 @@ const routes = [
     beforeEnter: (to, from, next) => {
       console.log("Manage Route Guard");
       next();
+    },
+    meta: {
+      requiresAuth: true,
     },
   },
   // redirect is better for search engines to index
@@ -44,10 +49,20 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log("Global Guard");
+  // console.log(to.meta);
 
-  // The router will not render the component until called 'next()' function
-  next();
+  if (!to.meta.requiresAuth) {
+    // The router will not render the component until called 'next()' function
+    next();
+    return;
+  }
+
+  const store = useUserStore();
+  if (store.userLoggedIn) {
+    next();
+  } else {
+    next({ name: "home" });
+  }
 });
 
 export default router;
