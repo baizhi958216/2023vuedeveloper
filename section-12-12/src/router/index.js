@@ -19,6 +19,10 @@ const routes = [
     // alias: "/manage",
     path: "/manage-music",
     component: Manage,
+    beforeEnter: (to, from, next) => {
+      console.log("Manage Route Guard");
+      next();
+    },
   },
   // redirect is better for search engines to index
   // the new URLS as fast as possible
@@ -41,7 +45,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   console.log("Global Guard");
-  console.log(to, from);
+
   // The router will not render the component until called 'next()' function
   next();
 });
