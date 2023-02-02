@@ -49,23 +49,23 @@ export default {
         // const storageRef = storage.ref("songs"); //music-9a6d5.appspot.com/songs
         // const songsRef = storageRef.child(`songs/${file.name}`); //music-9a6d5.appspot.com/songs/example.mp3
         // songsRef.put(file);
-        const storageRef = ref(storage, "htmls");
-        const htmlRef = ref(storage, `htmls/${file.name}`);
-        const task = uploadBytesResumable(htmlRef, file);
+        // const storageRef = ref(storage, "htmls");
+        const songRef = ref(storage, `songs/${file.name}`);
+        const task = uploadBytesResumable(songRef, file);
 
-        this.uploads.push({
+        // Get the index for that latest item in the array
+        const uploadIndex = this.uploads.push({
           task,
           current_progress: 0,
           name: file.name
-        })
+        }) - 1;
 
         task.on('state_changed', (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log(progress);
+          this.uploads[uploadIndex].current_progress = progress
         })
       });
 
-      console.log(files);
     },
   },
 };
