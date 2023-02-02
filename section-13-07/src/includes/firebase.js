@@ -6,7 +6,12 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { collection, setDoc, getFirestore, doc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  uploadBytesResumable,
+} from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDT5kNloiw7uhhBLdRHezeVNg3QqZDhx1s",
@@ -33,4 +38,5 @@ export {
   storage,
   ref,
   uploadBytes,
+  uploadBytesResumable,
 };
