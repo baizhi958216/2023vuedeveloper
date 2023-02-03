@@ -134,11 +134,16 @@ export default {
         );
       });
     },
+    cancelUploads() {
+      this.uploads.forEach((upload) => {
+        upload.task.cancel();
+      });
+    },
   },
-  beforeUnmount() {
+  /*   beforeUnmount() {
     this.uploads.forEach((upload) => {
       upload.task.cancel();
     });
-  },
+  }, */
 };
 </script>
