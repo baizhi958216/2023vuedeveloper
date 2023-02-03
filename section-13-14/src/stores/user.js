@@ -28,7 +28,7 @@ export default defineStore("user", {
         country: values.country,
       });
 
-      updateProfile(getAuth().currentUser, {
+      await updateProfile(getAuth().currentUser, {
         displayName: values.name,
       });
 
