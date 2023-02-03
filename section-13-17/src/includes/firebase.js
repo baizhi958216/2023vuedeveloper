@@ -11,6 +11,9 @@ import {
   getFirestore,
   doc,
   addDoc,
+  getDocs,
+  where,
+  query,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -50,4 +53,7 @@ export {
   getDownloadURL,
   songsCollection,
   addDoc,
+  where,
+  query,
+  getDocs,
 };
