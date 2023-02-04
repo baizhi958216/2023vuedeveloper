@@ -24,6 +24,7 @@
               :updateSong="updateSong"
               :index="i"
               :removeSong="removeSong"
+              :updateUnsavedFlag="updateUnsavedFlag"
             />
           </div>
         </div>
@@ -61,8 +62,15 @@ export default {
     snapshot.forEach(this.addSong);
   },
   beforeRouteLeave(to, form, next) {
-    this.$refs.upload.cancelUploads();
-    next();
+    if (!this.updateUnsavedFlag) {
+      next();
+    } else {
+      const leave = confirm(
+        "You have unsaved changes. Are you sure you want to leave?"
+      );
+      this.$refs.upload.cancelUploads();
+      next(leave);
+    }
   },
   methods: {
     updateSong(i, values) {
@@ -78,6 +86,9 @@ export default {
         docID: document.id,
       };
       this.songs.push(song);
+    },
+    updateUnsavedFlag(value) {
+      this.updateUnsavedFlag = value;
     },
   },
   // after Route Guard
