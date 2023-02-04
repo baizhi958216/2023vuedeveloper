@@ -15,6 +15,7 @@ import {
   where,
   query,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -22,6 +23,7 @@ import {
   uploadBytes,
   uploadBytesResumable,
   getDownloadURL,
+  deleteObject,
 } from "firebase/storage";
 
 const firebaseConfig = {
@@ -58,4 +60,6 @@ export {
   query,
   getDocs,
   updateDoc,
+  deleteObject,
+  deleteDoc,
 };
