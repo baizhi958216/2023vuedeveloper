@@ -14,6 +14,7 @@ import {
   getDocs,
   where,
   query,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -56,4 +57,5 @@ export {
   where,
   query,
   getDocs,
+  updateDoc,
 };
