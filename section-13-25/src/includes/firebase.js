@@ -16,6 +16,7 @@ import {
   query,
   updateDoc,
   deleteDoc,
+  getDoc,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -62,4 +63,5 @@ export {
   updateDoc,
   deleteObject,
   deleteDoc,
+  getDoc,
 };

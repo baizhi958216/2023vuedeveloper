@@ -49,6 +49,7 @@ import {
   getDownloadURL,
   songsCollection,
   addDoc,
+  getDoc,
 } from "@/includes/firebase";
 export default {
   name: "Upload",
@@ -58,6 +59,7 @@ export default {
       uploads: [],
     };
   },
+  props: ["addSong"],
   methods: {
     upload($event) {
       this.is_dragover = false;
@@ -125,7 +127,10 @@ export default {
             };
 
             song.url = await getDownloadURL(task.snapshot.ref);
-            await addDoc(songsCollection, song);
+            const songRef = await addDoc(songsCollection, song);
+            const songSnapshot = await getDoc(songRef);
+
+            this.addSong(songSnapshot);
 
             this.uploads[uploadIndex].variant = "bg-green-400";
             this.uploads[uploadIndex].icon = "fas fa-check";
