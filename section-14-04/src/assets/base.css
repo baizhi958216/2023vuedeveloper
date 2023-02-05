@@ -1,0 +1,8 @@
+/* 
+  These directives are created by tailwind,
+  They'll inject tailwinds classes into our project,
+  We need to tell it where to load its styles.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
