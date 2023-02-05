@@ -17,6 +17,9 @@ import {
   updateDoc,
   deleteDoc,
   getDoc,
+  limit,
+  orderBy,
+  startAfter,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -64,4 +67,7 @@ export {
   deleteObject,
   deleteDoc,
   getDoc,
+  limit,
+  orderBy,
+  startAfter,
 };
