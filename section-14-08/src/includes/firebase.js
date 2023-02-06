@@ -43,6 +43,7 @@ const storage = getStorage(app);
 
 const usersCollection = collection(db, "users");
 const songsCollection = collection(db, "songs");
+const commentsCollection = collection(db, "comments");
 
 export {
   getAuth,
@@ -70,4 +71,5 @@ export {
   limit,
   orderBy,
   startAfter,
+  commentsCollection,
 };
