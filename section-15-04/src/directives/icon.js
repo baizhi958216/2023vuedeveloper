@@ -15,14 +15,29 @@ export default {
     prevNode: The previous vnode object before the directive was updated (applies to beforeUpdate and updated hooks only)
     */
   beforeMount(el, binding) {
-    let iconClass = `fa fa-${binding.value} float-right text-green-400 text-xl`;
+    let iconClass = `fa fa-${binding.value} text-xl`;
 
     /* 
+    arguments
+    'arg' always defined in the binding object, whereas modifiers will return undefined
     <div class="..." v-icon:full="...">
     if(binding.arg==='full'){
       iconClass = binding.value
     } 
     */
+
+    /*
+    modifiers is better alternative to arguments, it define multiple at once
+    */
+    if (binding.modifiers.right) {
+      iconClass += " float-right";
+    }
+
+    if (binding.modifiers.yellow) {
+      iconClass += " text-yellow-400";
+    } else {
+      iconClass += " text-green-400";
+    }
 
     el.innerHTML += `<i class="${iconClass}"></i>`;
   },
