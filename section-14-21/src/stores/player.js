@@ -12,6 +12,12 @@ export default defineStore("player", {
   }),
   actions: {
     async newSong(song) {
+      if (this.sound.playing && this.sound.playing()) {
+        this.sound.pause();
+        this.sound.seek(0);
+        return;
+      }
+
       if (this.sound instanceof Howl) {
         this.sound.unload();
       }
