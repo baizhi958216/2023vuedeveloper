@@ -25,7 +25,7 @@
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
       <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
         <!-- Comment Count -->
-        <span class="card-title">Comments (15)</span>
+        <span class="card-title">Comments ({{ song.comment_count }})</span>
         <i class="fa fa-comments float-right text-green-400 text-2xl"></i>
       </div>
       <div class="p-6">
@@ -95,6 +95,7 @@ import {
   query,
   where,
   getDocs,
+  updateDoc,
 } from "@/includes/firebase";
 import { mapState } from "pinia";
 import useUserStore from "@/stores/user";
@@ -161,6 +162,12 @@ export default {
       };
 
       await addDoc(commentsCollection, comment);
+
+      this.song.comment_count += 1;
+      const docRef = doc(songsCollection, this.$route.params.id);
+      await updateDoc(docRef, {
+        comment_count: this.song.comment_count,
+      });
 
       this.getComments();
 
