@@ -181,5 +181,15 @@ export default {
       });
     },
   },
+  watch: {
+    // Must correspond to the property we want to watch on the component
+    sort(newVal) {
+      this.$route.push({
+        query: {
+          sort: newVal,
+        },
+      });
+    },
+  },
 };
 </script>
