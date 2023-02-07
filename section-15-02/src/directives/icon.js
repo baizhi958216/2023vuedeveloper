@@ -14,4 +14,8 @@ export default {
     vnode: allows you to refer directly to the node in the virtual DOM if you need to
     prevNode: The previous vnode object before the directive was updated (applies to beforeUpdate and updated hooks only)
     */
+  beforeMount(el) {
+    el.innerHTML +=
+      '<i class="fa fa-headphones-alt float-right text-green-400 text-xl"></i>';
+  },
 };
