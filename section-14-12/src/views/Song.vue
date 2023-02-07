@@ -137,6 +137,10 @@ export default {
       return;
     }
 
+    const { sort } = this.$route.query;
+
+    this.sort = sort === "1" || sort === "2" ? sort : "1";
+
     this.song = docSnapshot.data();
     this.getComments();
   },
@@ -184,7 +188,12 @@ export default {
   watch: {
     // Must correspond to the property we want to watch on the component
     sort(newVal) {
-      this.$route.push({
+      if (newVal === this.$route.query.sort) {
+        return;
+      }
+      // Path Params: Should be used for returning a single resource or multiple resources
+      // Query Params: Should be used for sorting/filtering through data.
+      this.$router.push({
         query: {
           sort: newVal,
         },
