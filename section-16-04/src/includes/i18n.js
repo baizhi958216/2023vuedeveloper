@@ -9,4 +9,18 @@ export default createI18n({
     en,
     zh,
   },
+  numberFormats: {
+    en: {
+      currency: {
+        style: "currency",
+        currency: "USD",
+      },
+    },
+    cn: {
+      currency: {
+        style: "currency",
+        currency: "CNY",
+      },
+    },
+  },
 });
