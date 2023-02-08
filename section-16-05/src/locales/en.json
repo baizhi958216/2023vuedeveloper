@@ -4,5 +4,9 @@
   },
   "song": {
     "comment_count": "No comments | 1 comment | {count} comments"
+  },
+  "register":{
+    "accept":"I accept Music's {0}",
+    "tos":"Terms of Service"
   }
 }
