@@ -14,7 +14,7 @@
   >
     <!-- Name -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Name</label>
+      <label class="inline-block mb-2">{{ $t("register.name") }}</label>
       <vee-field
         type="text"
         name="name"
@@ -25,7 +25,7 @@
     </div>
     <!-- Email -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Email</label>
+      <label class="inline-block mb-2">{{ $t("register.email") }}</label>
       <vee-field
         type="email"
         name="email"
@@ -36,7 +36,7 @@
     </div>
     <!-- Age -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Age</label>
+      <label class="inline-block mb-2">{{ $t("register.age") }}</label>
       <vee-field
         type="number"
         name="age"
@@ -46,7 +46,7 @@
     </div>
     <!-- Password -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Password</label>
+      <label class="inline-block mb-2">{{ $t("register.password") }}</label>
       <vee-field name="password" :bails="false" v-slot="{ field, errors }">
         <input
           type="password"
@@ -61,7 +61,9 @@
     </div>
     <!-- Confirm Password -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Confirm Password</label>
+      <label class="inline-block mb-2">{{
+        $t("register.confirm_password")
+      }}</label>
       <vee-field
         name="confirm_password"
         type="password"
@@ -72,7 +74,7 @@
     </div>
     <!-- Country -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Country</label>
+      <label class="inline-block mb-2">{{ $t("register.country") }}</label>
       <vee-field
         as="select"
         name="country"

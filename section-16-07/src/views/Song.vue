@@ -67,7 +67,7 @@
               class="py-1.5 px-3 rounded text-white bg-green-600 block"
               :disable="comment_in_submission"
             >
-              Submit
+              {{ $t("song.submit") }}
             </button>
           </vee-form>
           <!-- Sort Comments -->
@@ -75,8 +75,8 @@
             v-model="sort"
             class="block mt-4 py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
           >
-            <option value="1">Latest</option>
-            <option value="2">Oldest</option>
+            <option value="1">{{ $t("song.sort_comment_latest") }}</option>
+            <option value="2">{{ $t("song.sort_comment_oldest") }}</option>
           </select>
         </div>
       </div>
