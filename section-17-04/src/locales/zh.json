@@ -1,0 +1,54 @@
+{
+  "about": {
+    "message": "关于页面"
+  },
+  "home": {
+    "listen": "享受美妙的音乐!",
+    "music": "静静的夜晚，听着哪有自己故事的歌曲，心碎了、落泪了，回忆着哪事。哪梦幻般的音乐世界，到底蕴藏了什么道理，节奏动感，悦耳动听，蓝调情歌，深情浓郁的唱腔，节奏动感的旋律，每一个音符都是如此饱含感情与悦耳动听，如丝绸般的。音，独具品位的触动你心。",
+    "songs": "歌单"
+  },
+  "manage": {
+    "my_songs": "我的歌单"
+  },
+  "song": {
+    "comment_count": "没有回复 | 1条回复 | {count} 条回复",
+    "submit": "提交",
+    "sort_comment_latest": "最新的",
+    "sort_comment_oldest": "最早的"
+  },
+  "header": {
+    "about": "关于",
+    "login_register": "登录 / 注册",
+    "manage": "管理",
+    "logout": "退出登录"
+  },
+  "auth": {
+    "title": "登录账号",
+    "login": "登录",
+    "register": "注册"
+  },
+  "composition_item": {
+    "song_title": "歌曲名",
+    "genre": "类型",
+    "submit": "提交",
+    "goback": "返回"
+  },
+  "login": {
+    "email": "邮箱",
+    "password": "密码"
+  },
+  "register": {
+    "name": "昵称",
+    "email": "邮箱",
+    "age": "年龄",
+    "password": "密码",
+    "confirm_password": "确认密码",
+    "country": "城市",
+    "accept": "我接受平台 {0}",
+    "tos": "服务条款"
+  },
+  "upload": {
+    "upload": "上传",
+    "drop": "把文件拖进这里"
+  }
+}
