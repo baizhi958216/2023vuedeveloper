@@ -69,6 +69,18 @@ export default {
         : [...$event.target.files];
 
       files.forEach((file) => {
+        if (!navigator.onLine) {
+          this.uploads.push({
+            task: {},
+            current_progress: 100,
+            name: file.name,
+            variant: "bg-red-400",
+            icon: "fas fa-times",
+            text_class: "text-red-400",
+          });
+          return;
+        }
+
         // const storageRef = storage.ref("songs"); //music-9a6d5.appspot.com/songs
         // const songsRef = storageRef.child(`songs/${file.name}`); //music-9a6d5.appspot.com/songs/example.mp3
         // songsRef.put(file);
