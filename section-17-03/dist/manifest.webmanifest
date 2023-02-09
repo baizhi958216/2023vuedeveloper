@@ -1,0 +1,9 @@
+{
+  "name": "section-17-03",
+  "short_name": "section-17-03",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "en",
+  "scope": "/"
+}
