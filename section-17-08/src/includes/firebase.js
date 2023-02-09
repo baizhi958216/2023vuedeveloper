@@ -20,6 +20,7 @@ import {
   limit,
   orderBy,
   startAfter,
+  enableIndexedDbPersistence,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -40,6 +41,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
+
+/*  
+  Unable to authenticate
+  Storage is limited
+  Unable to upload files
+*/
+enableIndexedDbPersistence(db).catch((err) => {
+  console.log(`Firebase persistence error ${err.code}`);
+});
 
 const usersCollection = collection(db, "users");
 const songsCollection = collection(db, "songs");
