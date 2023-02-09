@@ -13,6 +13,17 @@ export default defineConfig({
       devOptions: {
         enable: true,
       },
+      manifest: {
+        name: "Music App",
+        theme_color: "#ff5e3a",
+        icons: [
+          {
+            src: "assets/img/pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
+      },
     }),
   ],
   resolve: {
