@@ -1,0 +1,54 @@
+{
+  "about": {
+    "message": "This is an about page"
+  },
+  "home": {
+    "listen": "Listen to Great Music!",
+    "music": "In the quiet night, listening to the songs with their own stories, my heart was broken, I cried, and I remembered what happened. What is the truth in the dreamlike music world? The rhythm is dynamic, sweet and beautiful, the blues love song, the soulful singing, the rhythm is dynamic, and every note is so full of emotion and sweet and beautiful, like silk. Sound, with unique taste, touches your heart.",
+    "songs": "Songs"
+  },
+  "manage": {
+    "my_songs": "My Songs"
+  },
+  "song": {
+    "comment_count": "No comments | 1 comment | {count} comments",
+    "submit": "Submit",
+    "sort_comment_latest": "Latest",
+    "sort_comment_oldest": "Oldest"
+  },
+  "header": {
+    "about": "About",
+    "login_register": "Login / Register",
+    "manage": "Manage",
+    "logout": "Logout"
+  },
+  "auth": {
+    "title": "Your Account",
+    "login": "Login",
+    "register": "Register"
+  },
+  "composition_item": {
+    "song_title": "Song Title",
+    "genre": "Genre",
+    "submit": "Submit",
+    "goback": "Go Back"
+  },
+  "login": {
+    "email": "Email",
+    "password": "Password"
+  },
+  "register": {
+    "name": "Name",
+    "email": "Email",
+    "age": "Age",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "country": "Country",
+    "accept": "I accept Music's {0}",
+    "tos": "Terms of Service"
+  },
+  "upload": {
+    "upload": "Upload",
+    "drop": "Drop your files here"
+  }
+}
