@@ -146,21 +146,28 @@ export default {
       });
     },
   },
-  async created() {
-    const docRef = doc(songsCollection, this.$route.params.id);
+  // beforeRouteEnter navigation guard will run before the component is loaded onto the page.
+  // This guard will give us the opportunity to perform any operation necessary
+  // for the component to display propely
+  async beforeRouteEnter(to, from, next) {
+    // the `to` object holds properties related to the current route being visited this object
+    // include route params will be able to provide the function
+    const docRef = doc(songsCollection, to.params.id);
     const docSnapshot = await getDoc(docRef);
 
-    if (!docSnapshot.exists()) {
-      this.$router.push({ name: "home" });
-      return;
-    }
+    next((vm) => {
+      if (!docSnapshot.exists()) {
+        vm.$router.push({ name: "home" });
+        return;
+      }
 
-    const { sort } = this.$route.query;
+      const { sort } = vm.$route.query;
 
-    this.sort = sort === "1" || sort === "2" ? sort : "1";
+      vm.sort = sort === "1" || sort === "2" ? sort : "1";
 
-    this.song = docSnapshot.data();
-    this.getComments();
+      vm.song = docSnapshot.data();
+      vm.getComments();
+    });
   },
   methods: {
     ...mapActions(usePlayerStore, ["newSong"]),
