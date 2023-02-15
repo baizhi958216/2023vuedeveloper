@@ -7,6 +7,10 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // 声明globals关键字, 测试文件不再需要引入各测试模块, 但需修改eslint配置文件忽略错误提示
+  test: {
+    globals: true,
+  },
   plugins: [
     vue(),
     VitePWA({
