@@ -1,6 +1,5 @@
 import SongItem from "@/components/SongItem.vue";
-import { shallowMount } from "@vue/test-utils";
-import { describe, expect, test } from "vitest";
+import { shallowMount, RouterLinkStub } from "@vue/test-utils";
 
 describe("SongItem.vue", () => {
   test("render song.display_name", () => {
@@ -8,11 +7,23 @@ describe("SongItem.vue", () => {
       display_name: "test",
     };
     const wrapper = shallowMount(SongItem, {
+      // 塞假数据
       propsData: {
         song,
       },
+
+      // 加载路由
+      global: {
+        components: {
+          "router-link": RouterLinkStub,
+        },
+      },
     });
-    // 有报错: 因为router-link没有注册
-    expect(wrapper.text()).toContain(song.display_name);
+
+    // 通过css查找
+    const compositionAuthor = wrapper.find(".text-gray-500");
+
+    // 测试是否正常渲染
+    expect(compositionAuthor.text()).toBe(song.display_name);
   });
 });
