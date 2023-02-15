@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1>{{ $t("about.message") }}</h1>
-    <base-button />
+    <h1>关于页面</h1>
+    <!-- <base-button /> -->
   </div>
 </template>
 <script>
