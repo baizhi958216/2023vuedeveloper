@@ -25,5 +25,8 @@ describe("SongItem.vue", () => {
 
     // 测试是否正常渲染
     expect(compositionAuthor.text()).toBe(song.display_name);
+
+    // 尽可能避免boolean的判断, 发生错误后不能准确的知道具体的错误位置
+    // expect(compositionAuthor.text() === song.display_name).toBe(false);
   });
 });
