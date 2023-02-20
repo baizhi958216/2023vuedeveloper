@@ -1,0 +1,15 @@
+{
+  "name": "controlled-components",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "bootstrap": "^5.2.3",
+    "vite": "^4.1.3",
+    "vue": "^3.2.47"
+  }
+}
