@@ -9,6 +9,8 @@
     <input type="text" v-model="phrase" />
   </p>
   <P>{{ reversedPhrase }}</P>
+
+  <app-alert :user="user" />
 </template>
 
 <script>
@@ -22,8 +24,13 @@ import {
   onBeforeMount,
   onMounted,
 } from "vue";
+import AppAlert from "@/components/Alert.vue";
+
 export default {
   name: "App",
+  components: {
+    AppAlert,
+  },
   setup() {
     onBeforeMount(() => {
       console.log("onBeforeMount");
@@ -71,6 +78,7 @@ export default {
       phrase,
       reversedPhrase,
       double,
+      user,
     };
   },
 };
