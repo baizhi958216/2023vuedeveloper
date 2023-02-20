@@ -12,10 +12,26 @@
 </template>
 
 <script>
-import { ref, reactive, toRefs, watchEffect, watch, computed } from "vue";
+import {
+  ref,
+  reactive,
+  toRefs,
+  watchEffect,
+  watch,
+  computed,
+  onBeforeMount,
+  onMounted,
+} from "vue";
 export default {
   name: "App",
   setup() {
+    onBeforeMount(() => {
+      console.log("onBeforeMount");
+    });
+    onMounted(() => {
+      console.log("onMounted");
+    });
+
     let num = ref(0);
 
     console.log(num);
