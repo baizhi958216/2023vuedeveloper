@@ -15,53 +15,36 @@
   <button type="button" ref="btn">Button</button>
 </template>
 
-<script>
+<script setup>
 import { ref, reactive, toRefs, onBeforeMount, onMounted } from "vue";
 import AppAlert from "@/components/Alert.vue";
 import { useNumber } from "@/hooks/number";
 import { usePhrase } from "@/hooks/phrase";
-export default {
-  name: "App",
-  components: {
-    AppAlert,
-  },
-  setup() {
-    const btn = ref(null);
 
-    onBeforeMount(() => {
-      console.log("onBeforeMount");
-    });
-    onMounted(() => {
-      console.log("onMounted");
+const btn = ref(null);
 
-      btn.value.addEventListener("click", () => {
-        console.log("button clicked");
-      });
-    });
+onBeforeMount(() => {
+  console.log("onBeforeMount");
+});
+onMounted(() => {
+  console.log("onMounted");
 
-    const { num, increment, double } = useNumber();
-    const { phrase, reversedPhrase, num: numPhrase } = usePhrase();
+  btn.value.addEventListener("click", () => {
+    console.log("button clicked");
+  });
+});
 
-    const user = reactive({
-      name: "John",
-      age: 20,
-    });
+const { num, increment, double } = useNumber();
+const { phrase, reversedPhrase, num: numPhrase } = usePhrase();
 
-    setTimeout(() => {
-      user.name = "Luis";
-    }, 3000);
+const user = reactive({
+  name: "John",
+  age: 20,
+});
 
-    return {
-      num,
-      increment,
-      ...toRefs(user),
-      phrase,
-      reversedPhrase,
-      double,
-      user,
-      btn,
-      numPhrase,
-    };
-  },
-};
+setTimeout(() => {
+  user.name = "Luis";
+}, 3000);
+
+const { name } = toRefs(user);
 </script>
