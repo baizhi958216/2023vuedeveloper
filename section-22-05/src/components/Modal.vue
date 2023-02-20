@@ -1,5 +1,12 @@
 <template>
   <div class="modal" :style="{ display: show ? 'block' : 'none' }">
+    <!-- <div
+      class="modal-dialog"
+      style="z-index: 2000"
+      @keydown.esc="close"
+      tabindex="0"
+      ref="modal"
+    > -->
     <div class="modal-dialog" style="z-index: 2000">
       <div class="modal-content">
         <div class="modal-header">
@@ -25,6 +32,31 @@ export default {
     close() {
       this.$emit("hide");
     },
+    handler(e) {
+      if (e.code === "Escape" && this.show) {
+        this.close();
+      }
+    },
   },
+  created() {
+    document.addEventListener("keydown", this.handler);
+  },
+  unmounted() {
+    document.removeEventListener("keydown", this.handler);
+  },
+  /* watch: {
+    show(newVal) {
+      if (newVal) {
+        this.$nextTick(() => {
+          this.$refs.modal.focus();
+        });
+      }
+    },
+  }, */
 };
 </script>
+<!-- <style scoped>
+.modal-dialog {
+  outline: 0;
+}
+</style> -->
