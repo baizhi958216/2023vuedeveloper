@@ -6,14 +6,9 @@
         <div class="card-body">
           <form @submit.prevent="submit">
             <div class="mb-2">
-              <div class="input-group">
-                <input type="text" class="form-control" readonly />
-                <button class="btn btn-outline-secondary" type="button">
-                  Button
-                </button>
-              </div>
+              <emoji-input v-model="emoji" :options="{ position: 'bottom' }" />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">发送</button>
           </form>
         </div>
       </div>
@@ -22,8 +17,11 @@
 </template>
 
 <script>
+import EmojiInput from "./components/EmojiInput.vue";
+
 export default {
   name: "App",
+  components: { EmojiInput },
   data() {
     return {
       emoji: "",
